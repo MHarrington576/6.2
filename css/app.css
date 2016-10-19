@@ -5759,13 +5759,6 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
-*, *::before, *::after {
-  box-sizing: border-box; }
-
-.dormant {
-  visibility: hidden;
-  display: none; }
-
 h1 {
   font-family: 'Raleway', sans-serif;
   font-size: 40px;
