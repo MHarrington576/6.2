@@ -2,15 +2,6 @@ $icon-font-path: '../../node_modules/bootstrap-sass/assets/fonts/bootstrap/';
 @import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
 @import 'https://fonts.googleapis.com/css?family=Raleway';
 
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-.dormant {
-  visibility: hidden;
-  display: none;
-}
-
 h1 {
   font-family: 'Raleway', sans-serif;
   font-size: 40px;
