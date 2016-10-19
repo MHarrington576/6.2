@@ -1,40 +1,29 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
 
-var MyPost = Backbone.Model.extend({
-  alpha: function(){
-    console.log('Lorem ipsum dolor sit amet.');
-  }
-});
+var MyPost = Backbone.Model.extend({});
 
 var MyPostCollection = Backbone.Collection.extend({
   model: MyPost,
-  url: 'http://tiny-lasagna-server.herokuapp.com/collections/posts/',
-  parse: function(data){
-    return data;
-  }
+  url: 'http://tiny-lasagna-server.herokuapp.com/collections/posts/'
 });
 
-var button = document.getElementById('the-button');
 var publicPosts = new MyPostCollection();
 
-$(button.on('click', function(e){
+
+$('#the-button').on('click', function(e){
   e.preventDefault();
 
-  button.disabled = true;
+  $(this).prop("disabled", true);
+  $('#the-button').html('Loading...');
 
   publicPosts.fetch().then(function(){
+    $('#the-button').html('Submit');
 
-    // publicPosts.forEach(
-    // document.createElement('<li>')
-    // );
+    publicPosts.each(function(post){
+      $('ul.dump-data-here').append('<li>' + post.get('title') + '</li>');
+    });
 
-    console.log(publicPosts);
-    button.disabled = false;
+  $('#the-button').prop("disabled", false);
   });
-}));
-
-
-
-//$("#the-button")[0].disabled = false;
-//$("#the-button")[0].disabled = true;
+});
