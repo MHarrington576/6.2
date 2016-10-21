@@ -5,7 +5,7 @@ var MyPost = Backbone.Model.extend({});
 
 var MyPostCollection = Backbone.Collection.extend({
   model: MyPost,
-  url: 'http://tiny-lasagna-server.herokuapp.com/collections/posts/'
+  url: 'https://tiny-lasagna-server.herokuapp.com/collections/posts/'
 });
 
 var publicPosts = new MyPostCollection();
