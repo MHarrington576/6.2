@@ -1,15 +1,8 @@
 var $ = require('jquery');
 var Backbone = require('backbone');
+var models = require('./models.js');
 
-var MyPost = Backbone.Model.extend({});
-
-var MyPostCollection = Backbone.Collection.extend({
-  model: MyPost,
-  url: 'https://tiny-lasagna-server.herokuapp.com/collections/posts/'
-});
-
-var publicPosts = new MyPostCollection();
-
+var publicPosts = new models.MyPostCollection();
 
 $('#the-button').on('click', function(e){
   e.preventDefault();
